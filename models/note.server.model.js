@@ -4,7 +4,9 @@ var Schema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  fullName: String,
-  noteText: String
+  noteText:{
+    type: String,
+    default: "New entry"
+  }
 });
 export default mongoose.model('Note', Schema);
