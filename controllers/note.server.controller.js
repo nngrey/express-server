@@ -34,6 +34,7 @@ export const deleteNote = (req,res) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});
     }
-return res.json({'success':true,'message':note.noteText+' deleted successfully'});
+  const message = note == null ? "unknown" : note.noteText
+return res.json({'success':true,'message':message+' deleted successfully'});
   })
 }
