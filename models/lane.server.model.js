@@ -4,10 +4,9 @@ var Schema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  noteText:{
+  name:{
     type: String,
-    default: "New entry"
-  },
-  laneId: String
+    default: "New column"
+  }
 });
-export default mongoose.model('Note', Schema);
+export default mongoose.model('Lane', Schema);

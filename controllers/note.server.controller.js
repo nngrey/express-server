@@ -30,6 +30,7 @@ export const updateNote = (req,res) => {
 }
 
 export const deleteNote = (req,res) => {
+  console.log(req.params.id);
   Note.findByIdAndRemove(req.params.id, (err,note) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});
