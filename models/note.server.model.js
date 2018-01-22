@@ -6,7 +6,7 @@ var Schema = mongoose.Schema({
   },
   name:{
     type: String,
-    default: "New entry"
+    default: "New item"
   },
   laneId: String
 });
