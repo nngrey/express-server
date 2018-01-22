@@ -4,7 +4,7 @@ var Schema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  noteText:{
+  name:{
     type: String,
     default: "New entry"
   },
