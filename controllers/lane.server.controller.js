@@ -21,7 +21,14 @@ return res.json({'success':true,'message':'Lane added successfully',lane});
 }
 
 export const updateLane = (req,res) => {
-  Lane.findOneAndUpdate({ _id:req.body.id }, req.body, { new:true }, (err,lane) => {
+  let body;
+  if(req.body.notes){
+    const notes = req.body.notes.split(",");
+    body = {notes: notes}
+  } else {
+    body = req.body
+  }
+  Lane.findOneAndUpdate({ _id:req.body.id }, body, { new:true }, (err,lane) => {
     if(err){
     return res.json({'success':false,'message':'Some Error','error':err});
     }
@@ -30,7 +37,6 @@ export const updateLane = (req,res) => {
 }
 
 export const deleteLane = (req,res) => {
-  console.log(req.params.id);
   Lane.findByIdAndRemove(req.params.id, (err,lane) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});

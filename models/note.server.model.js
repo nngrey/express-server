@@ -8,6 +8,7 @@ var Schema = mongoose.Schema({
     type: String,
     default: "New item"
   },
-  laneId: String
+  laneId: String,
+  uuid: String
 });
 export default mongoose.model('Note', Schema);
