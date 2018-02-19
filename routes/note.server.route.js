@@ -1,6 +1,8 @@
 import express from 'express';
 import * as noteController from '../controllers/note.server.controller';
 import * as laneController from '../controllers/lane.server.controller';
+import * as userController from '../controllers/user.server.controller';
+
 
 
 // get an instance of express router
@@ -21,5 +23,11 @@ router.route('/lanes')
 
 router.route('/lanes/:id')
       .delete(laneController.deleteLane);
+
+// router.route('/signin')
+//       .post(userController.addUser);
+
+router.route('/register')
+      .post(userController.addUser);
 
 export default router;

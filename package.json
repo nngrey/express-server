@@ -11,9 +11,11 @@
   "dependencies": {
     "babel-preset-es2015-node6": "^0.4.0",
     "babel-register": "^6.26.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-busboy": "^6.0.1",
+    "express-session": "^1.15.6",
     "mongoose": "^4.13.9",
     "morgan": "^1.9.0",
     "source-map-support": "^0.5.0"

@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 import bb from 'express-busboy';
 import SourceMapSupport from 'source-map-support';
 import noteRoutes from './routes/note.server.route';
+var session = require('express-session');
 
 // define our app using express
 const app = express();
@@ -35,6 +36,13 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mern-note-app', {
   useMongoClient: true,
 });
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false
+}));
 
 // add Source Map Support
 SourceMapSupport.install();
