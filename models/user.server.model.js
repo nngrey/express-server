@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
 var bcrypt = require('bcrypt');
 
-
 var Schema = mongoose.Schema({
+  createdAt:{
+    type: Date,
+    default: Date.now
+  },
   email: {
     type: String,
     unique: true,
@@ -11,17 +14,13 @@ var Schema = mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
-  },
-  passwordConf: {
-    type: String,
-    required: true,
+    required: true
   }
 });
 
 //authenticate input against database
 Schema.statics.authenticate = function (email, password, callback) {
-  User.findOne({ email: email })
+  this.findOne({ email: email })
     .exec(function (err, user) {
       if (err) {
         return callback(err)

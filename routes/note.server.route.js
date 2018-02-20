@@ -24,10 +24,14 @@ router.route('/lanes')
 router.route('/lanes/:id')
       .delete(laneController.deleteLane);
 
-// router.route('/signin')
-//       .post(userController.addUser);
-
 router.route('/register')
       .post(userController.addUser);
+
+router.route('/sign-in')
+      .post(userController.signIn);
+
+router.route('/sign-out')
+      .get(userController.signOut);
+
 
 export default router;

@@ -9,6 +9,7 @@ var Schema = mongoose.Schema({
     type: String,
     default: "New column"
   },
+  logicModelId: String,
   notes: Array
 });
 export default mongoose.model('Lane', Schema);
